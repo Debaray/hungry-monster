@@ -5,18 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hungry Monster</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
-<body>
-    <header>
-
+<body class="bg-warning">
+    <header class="container mt-1">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Hungry Monster</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ">
+                        <a class="nav-link " aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#">Recipes</a>
+                        <a class="nav-link" href="#">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
-    <main>
-
+    <main class="container">
+        <section class="mt-5">
+            <form class="searchContainer ms-5">
+                <i class="fa fa-search ms-2 searchIcon"></i>
+                <input class="searchBox" type="search" name="search" placeholder="Search for meal...">
+                <input type="submit" value="Search" class="searchButton">
+              </form>
+        </section>
+        <section class="ms-5 mt-5">
+            <h3>dsfsdf</h3>
+        </section>
     </main>
-
-    <script src="api.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

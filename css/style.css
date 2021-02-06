@@ -1,0 +1,31 @@
+
+.searchIcon {
+    color: gray;
+  }
+  .searchBox {
+    border: 0 solid white;
+    padding: 0.5em;
+    grid-column:2/4;
+    grid-row:1;
+    outline:none;
+  } 
+  .searchButton {
+    background: #234569;
+    border: 0;
+    color: white;
+    padding: 0.5em;
+    border-radius: 0;
+    grid-column:4/5;
+    grid-row:1;
+  }
+  .searchContainer {
+    display: grid;
+    grid-template-columns:0.2fr 5fr 1fr;
+    width:85%;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+  }
+  
