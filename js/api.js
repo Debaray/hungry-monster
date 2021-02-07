@@ -16,6 +16,7 @@ const filterMealName = () => {
     fetchData(urlMealByArea);
 }
 var checkResultData = 0;
+
 const fetchData = url => {
     fetch(url)
         .then(response => response.json())
@@ -29,115 +30,35 @@ const fetchData = url => {
                 isDisplayMealEmpty();
             }
         })
-        .catch(err => {isDisplayMealEmpty()});
+        .catch(err => { isDisplayMealEmpty() });
 }
-const isDisplayMealEmpty = () =>{
+
+const isDisplayMealEmpty = () => {
     const noDataDiv = document.getElementById('no-data-found');
     const ingredientDiv = document.getElementById('display-ingredients');
     const mealDiv = document.getElementById('display-meals');
-    if(checkResultData > 0)
-    {
+    if (checkResultData > 0) {
         noDataDiv.style.display = "none";
         ingredientDiv.style.display = "none";
         mealDiv.style.display = "grid";
     }
-    else
-    {
+    else {
         noDataDiv.style.display = "block";
         ingredientDiv.style.display = "none";
         mealDiv.style.display = "none";
         const createNoDataDiv = document.createElement('div');
         createNoDataDiv.className = 'no-data';
-        noDataDiv.innerHTML ="";
+        noDataDiv.innerHTML = "";
         const noDataInfo = `
         <div >
         <img src="images/noDataFound.webp">
         <h3 class="roboto-font">No Meal Found</h3>
         </div>
        `;
-       createNoDataDiv.innerHTML = noDataInfo;
+        createNoDataDiv.innerHTML = noDataInfo;
         noDataDiv.appendChild(createNoDataDiv);
     }
 }
-// const filterMealFirstLetter = () => {
-//     const searchBox = document.getElementById('search-box').value;
-//     const url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${searchBox}`;//search by meal first letter
-//     fetch(url)
-//         .then(response => response.json())
-//         .then(data => {
-
-//             if(data.meals === null)
-//             {
-//                 console.log("filterMealByMainIngredient");
-//                 filterMealByMainIngredient();
-//             }
-//             else{
-//                 console.log("2");
-//                 displayMeals(data.meals);
-//             }
-//            })
-//         .catch(err => console.log(err));
-// }
-
-// const filterMealByMainIngredient = () => {
-//     const searchBox = document.getElementById('search-box').value;
-//     const url = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchBox}`;//search by meal main ingredient
-//     fetch(url)
-//         .then(response => response.json())
-//         .then(data => {
-
-//             if(data.meals === null)
-//             {
-//                 console.log("filterMealByCategory");
-//                 filterMealByCategory();
-//             }
-//             else{
-//                 console.log("3");
-//                 displayMeals(data.meals);
-//             }
-//            })
-//         .catch(err => console.log(err));
-// }
-
-// const filterMealByCategory = () => {
-//     const searchBox = document.getElementById('search-box').value;
-//     const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${searchBox}`;//search by meal category
-//     fetch(url)
-//         .then(response => response.json())
-//         .then(data => {
-
-//             if(data.meals === null)
-//             {
-//                 console.log("filterMealByArea");
-//                 filterMealByArea();
-//             }
-//             else{
-//                 console.log("4");
-//                 displayMeals(data.meals);
-//             }
-//            })
-//         .catch(err => console.log(err));
-// }
-
-// const filterMealByArea = () => {
-//     const searchBox = document.getElementById('search-box').value;
-//     const url = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${searchBox}`;//search by meal area
-//     fetch(url)
-//         .then(response => response.json())
-//         .then(data => {
-
-//             if(data.meals === null)
-//             {
-//                 console.log("Ar nai");
-//                 //filterMealByArea();
-//             }
-//             else{
-//                 console.log("5");
-//                 displayMeals(data.meals);
-//             }
-//            })
-//         .catch(err => console.log(err));
-// }
 
 const displayMeals = meals => {
     if (meals === null) return;
@@ -154,7 +75,6 @@ const displayMeals = meals => {
         createMealDiv.innerHTML = mealInfo;
         mealDiv.appendChild(createMealDiv);
         checkResultData++;
-        console.log(checkResultData);
     });
 }
 
