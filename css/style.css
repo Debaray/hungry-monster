@@ -105,3 +105,25 @@ li{
    margin-left: 40%;
    margin-bottom: 5%;
 }
+#no-data-found{
+  display: block;
+  margin: auto;
+  width: 40%;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  
+}
+#no-data-found h3{
+  color :black;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  padding: 15px 0;
+}
+#no-data-found img{
+border: 0;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+  width: 100%;
+}

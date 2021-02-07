@@ -39,10 +39,11 @@
             <div class="searchContainer ms-5">
                 <i class="fa fa-search ms-2 searchIcon"></i>
                 <input id="search-box" class="searchBox" type="search" placeholder="Search for meal...">
-                <button onclick="filterMeal()" class="btn btn-primary active searchButton">Search</button>
+                <button onclick="filterMealName()" class="btn btn-primary active searchButton">Search</button>
             </div>
         </section>
         <section class="mt-5">
+            <div id="no-data-found"></div>
             <div id="display-ingredients"></div>
             <div id="display-meals"></div>
         </section>
