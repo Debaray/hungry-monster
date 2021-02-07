@@ -97,6 +97,8 @@ li{
 }
 .check-icon{
     margin-right: 5px;
+    background-color: white;
+    color: navy;
 }
 .decoration-button{
     align-items: center;

@@ -25,24 +25,20 @@ const displayMeals = meals => {
 }
 
 const mealDetail = idMeal => {
-
-
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`;
     fetch(url)
         .then(response => response.json())
         .then(data => displayIngredients(data.meals[0]))
         .catch(err => console.log(err));
-   // console.log("clicked", idMeal);
-
 }
-const displayIngredients = mealIngredientDetails => {
-    
 
+const displayIngredients = mealIngredientDetails => {
     const ingredientDiv = document.getElementById('display-ingredients');
-    ingredientDiv.style.display ="block";
+    ingredientDiv.style.display = "block";
     const mealDiv = document.getElementById('display-meals');
-    mealDiv.style.display ="none";
-    ingredientDiv.innerHTML ="";
+    mealDiv.style.display = "none";
+
+    ingredientDiv.innerHTML = "";
     const createIngredientDiv = document.createElement('div');
     createIngredientDiv.className = 'ingredient-meal';
     const ingredientInfo = `
@@ -50,36 +46,34 @@ const displayIngredients = mealIngredientDetails => {
     <h3 class="roboto-font">${mealIngredientDetails.strMeal}</h3>
     <h4 class="roboto-font">Ingredients</h4>
    `;
-   const ul = document.createElement('ul');
-   const ingredientList = [mealIngredientDetails.strIngredient1,mealIngredientDetails.strIngredient2,mealIngredientDetails.strIngredient3,
-    mealIngredientDetails.strIngredient4,mealIngredientDetails.strIngredient5,mealIngredientDetails.strIngredient6,mealIngredientDetails.strIngredient7,mealIngredientDetails.strIngredient8,mealIngredientDetails.strIngredient9,mealIngredientDetails.strIngredient10,mealIngredientDetails.strIngredient11,mealIngredientDetails.strIngredient12,mealIngredientDetails.strIngredient13,mealIngredientDetails.strIngredient14,mealIngredientDetails.strIngredient15,mealIngredientDetails.strIngredient16,mealIngredientDetails.strIngredient17,mealIngredientDetails.strIngredient18,mealIngredientDetails.strIngredient19,mealIngredientDetails.strIngredient20
-];
-   
-ingredientList.forEach(ingredient => {
-    if(ingredient ==="")
-    {     
-    }
-    else{
-         const li = document.createElement('li');
-         li.innerHTML = `<i class="fas fa-check-square check-icon"></i>  ${ingredient}`;
-         ul.appendChild(li);
-    }
-       
-   });
-  const button = document.createElement('button');
-  button.className = "btn btn-danger decoration-button";
-  button.innerText = "Close";
-  button.onclick = hideIngredient;
+    const ul = document.createElement('ul');
+    const ingredientList = [mealIngredientDetails.strIngredient1, mealIngredientDetails.strIngredient2, mealIngredientDetails.strIngredient3,
+    mealIngredientDetails.strIngredient4, mealIngredientDetails.strIngredient5, mealIngredientDetails.strIngredient6, mealIngredientDetails.strIngredient7, mealIngredientDetails.strIngredient8, mealIngredientDetails.strIngredient9, mealIngredientDetails.strIngredient10, mealIngredientDetails.strIngredient11, mealIngredientDetails.strIngredient12, mealIngredientDetails.strIngredient13, mealIngredientDetails.strIngredient14, mealIngredientDetails.strIngredient15, mealIngredientDetails.strIngredient16, mealIngredientDetails.strIngredient17, mealIngredientDetails.strIngredient18, mealIngredientDetails.strIngredient19, mealIngredientDetails.strIngredient20
+    ];
+    ingredientList.forEach(ingredient => {
+        if (ingredient === "") {
+        }
+        else {
+            const li = document.createElement('li');
+            li.innerHTML = `<i class="fas fa-check-square check-icon"></i>  ${ingredient}`;
+            ul.appendChild(li);
+        }
+    });
+    const button = document.createElement('button');
+    button.className = "btn btn-danger decoration-button";
+    button.innerText = "Close";
+    button.onclick = hideIngredient;
 
-   createIngredientDiv.innerHTML = ingredientInfo;
-   ingredientDiv.appendChild(createIngredientDiv);
-   ingredientDiv.appendChild(ul);
-   ingredientDiv.appendChild(button);
+    createIngredientDiv.innerHTML = ingredientInfo;
+    ingredientDiv.appendChild(createIngredientDiv);
+    ingredientDiv.appendChild(ul);
+    ingredientDiv.appendChild(button);
 }
 
-const hideIngredient = () =>{
+const hideIngredient = () => {
+    
     const ingredientDiv = document.getElementById('display-ingredients');
-    ingredientDiv.style.display ="none";
+    ingredientDiv.style.display = "none";
     const mealDiv = document.getElementById('display-meals');
-    mealDiv.style.display ="grid";
+    mealDiv.style.display = "grid";
 }
