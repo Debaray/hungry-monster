@@ -1,5 +1,5 @@
 const filterMealName = () => {
-    const searchBox = document.getElementById('search-box').value;
+    const searchBox = document.getElementById('search-box').value.trim() != '' ? document.getElementById('search-box').value : 'Chicken' ;
     const urlMealName = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchBox}`;//search by meal name
     const urlMealFirst = `https://www.themealdb.com/api/json/v1/1/search.php?f=${searchBox}`;//search by meal first letter
     const urlMainIngredient = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchBox}`;//search by meal main ingredient
